@@ -263,36 +263,6 @@ system("$root_dir/scripts/plot_polyA_tail_length.R $sample.polyA_tail_length.txt
 print "\n";
 chdir($current_dir);
 
-########## Calculate non-A residues in polyA tail ##########
-print &getTime() . " Calculate non-A residues in polyA tail\n";
-system("mkdir -p polyA_tail_nonA");
-chdir("$current_dir/polyA_tail_nonA");
-&call_nonA_in_polyA_tail( $sample, "$current_dir/polyA_tail_length/$sample.polyA_tail_length.txt", $min_pass, $min_pal, $limit, 1 );  # 1:3UTR(100nt)=> terminal
-&call_nonA_in_polyA_tail( $sample, "$current_dir/polyA_tail_length/$sample.polyA_tail_length.txt", $min_pass, $min_pal, $limit, 2 );  # 2:terminal(100nt)=> 3UTR
-&call_nonA_in_polyA_tail( $sample, "$current_dir/polyA_tail_length/$sample.polyA_tail_length.txt", $min_pass, $min_pal, 100, 3 )
-  ;    # 3:3UTR => terminal, scaled
-
-# plot, 3UTR => terminal, limit 100 nt
-$cmd = "$root_dir/scripts/plot_nonA_distribution_in_polyA_tail.R $sample.3UTR_nonA.txt $sample.3UTR_nonA.pdf $sample  1 $limit";
-if ( system($cmd) ) {
-    print "Output file: $sample.3UTR_nonA.pdf\n";
-}
-
-# plot, terminal => 3UTR, limit 100 nt
-$cmd = "$root_dir/scripts/plot_nonA_distribution_in_polyA_tail.R $sample.terminal_nonA.txt $sample.terminal_nonA.pdf $sample 2 $limit";
-if ( system($cmd) ) {
-    print "Output file: $sample.terminal_nonA.pdf\n";
-}
-
-# plot, terminal => 3UTR, scale
-$cmd = "$root_dir/scripts/plot_nonA_distribution_in_polyA_tail.R $sample.scaled_nonA.txt $sample.scaled_nonA.pdf $sample 3 100";
-if ( system($cmd) ) {
-    print "Output file: $sample.scaled_nonA.pdf\n";
-}
-
-print "\n";
-chdir($current_dir);
-
 ########## APA analysis ########
 if ($do_apa) {
     if ( !$gmap_index_path ) {
