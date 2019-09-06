@@ -211,33 +211,6 @@ my $exon_bed = "";
 if ( $species eq "mm10" ) {
     $exon_bed = "$root_dir/data/mm10.exons.bed";
 }
-elsif ( $species eq "mm9" ) {
-    $exon_bed = "$root_dir/data/mm9.exons.bed";
-}
-elsif ( $species eq "hg38" ) {
-    $exon_bed = "$root_dir/data/hg38.exons.bed";
-}
-elsif ( $species eq "hg19" ) {
-    $exon_bed = "$root_dir/data/hg19.exons.bed";
-}
-elsif ( $species eq "ce11" ) {
-    $exon_bed = "$root_dir/data/ce11.exons.bed";
-}
-elsif ( $species eq "dm6" ) {
-    $exon_bed = "$root_dir/data/dm6.exons.bed";
-}
-elsif ( $species eq "susScr11" ) {
-    $exon_bed = "$root_dir/data/susScr11.exons.bed";
-}
-elsif ( $species eq "Rnor6" ) {
-    $exon_bed = "$root_dir/data/Rnor6.exons.bed";
-}
-elsif ( $species eq "tair10" ) {
-    $exon_bed = "$root_dir/data/tair10.exons.bed";
-}
-elsif ( $species eq "danRer11" ) {
-    $exon_bed = "$root_dir/data/danRer11.exons.bed";
-}
 
 # ccs2exon, $4 => CCS name, $NF => Gene name
 #$cmd ="bedtools bamtobed -split -i $current_dir/align/$sample.ccs.aligned.bam | bedtools intersect -f 0.5 -a - -b $exon_bed -wa -wb 2>/dev/null | awk '{print \$4, \$NF}' | sort -u >$sample.ccs2exon.txt";
