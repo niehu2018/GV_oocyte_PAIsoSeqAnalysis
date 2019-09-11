@@ -19,12 +19,11 @@ Barcode Sequence: 5'-GAGTGCTACTCTAGTA-3' (16 nt)</br>
 ```
 ccs movieX.subreads.bam movieX.ccs.bam --noPolish --minPasses 1 &>ccs.log
 ```
-</br>
 However,We now suggest the following command:</br>
 ```
 ccs movieX.subreads.bam movieX.ccs.bam --richQVs &>ccs.log
 ```
-</br>The output file is movieX.ccs.bam
+The output file is movieX.ccs.bam
 ### Step 3. Demultiplex and trim adapters
 </br>Convert movieX.ccs.bam to fasta:</br>
 ```
