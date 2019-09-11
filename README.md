@@ -36,7 +36,7 @@ bam2fasta -u -o ccs movieX.ccs.bam
 The output file is movieX.ccs.fasta
 </br>Extract data and trim adapters:</br>
 ```
-./scripts/trim.py movieX.ccs.fasta sample 22 2 1>sample.out.fasta 2>sample.err.fasta
+./scripts/trim.py movieX.ccs.fasta sample GAGTGCTACTCTAGTAGTACTCTGCGTTGATACCACTGCTT 22 2 1>sample.out.fasta 2>sample.err.fasta
 ```
 ### Step 4. Calculate poly(A) tail length and call non-A residues
 Create minimap2 index :
