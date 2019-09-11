@@ -29,23 +29,21 @@ The output file is movieX.ccs.bam
 ```
 bam2fasta -u -o ccs movieX.ccs.bam
 ```
-</br>The output file is movieX.ccs.fasta
-</br>
+The output file is movieX.ccs.fasta
 </br>Extract data and trim adapters:</br>
 ```
 ./scripts/trim.py movieX.ccs.fasta sample 22 2 1>sample.out.fasta 2>sample.err.fasta
 ```
-</br>
 ### Step 4. Calculate poly(A) tail length and call non-A residues
-</br>Create minimap2 index :</br>
+Create minimap2 index :
 ```
 minimap2 -x splice -t 20 -d Mus_musculus.mmi Mus_musculus.GRCm38.dna.toplevel.chromosome.fa &>index.log
 ```
-</br>Collect CCS passes :</br>
+Collect CCS passes :
 ```
 ./scripts/GetCCSpass.pl movieX.ccs.bam >ccs.pass.txt
 ```
-</br>Run the pipeline:</br>
+Run the pipeline:
 ```
 perl run.pl --ccs sample.out.fasta --sample sampleName --species mm10 --minimap2_index Mus_musculus.mmi --minimap2_thread  10 --pass ccs.pass.txt &>run.log
 ```
