@@ -11,15 +11,20 @@ minimap2 2.15-r905
 
 ## Analysis of PAIso-Seq data
 ### Step 0. Known the library structure of PAIso-Seq data</br>
-5'-Adapter--->cDNA--->Barcode->Adapter-3'</br>
+Library structure: 5'-Adapter--->cDNA--->Barcode->Adapter-3'</br>
 5'-Adapter Sequence: 5'-AAGCAGTGGTATCAACGCAGAGTACATGGG-3' (30 nt)</br>
 3'-Adapter Sequence: 5'-GTACTCTGCGTTGATACCACTGCTT-3' (25 nt)</br>
-Barcode Sequence: GAGTGCTACTCTAGTA (16 nt)</br>
+Barcode Sequence: 5'-GAGTGCTACTCTAGTA-3' (16 nt)</br>
 ### Step 1. Circular Consensus Sequence calling
 `ccs movieX.subreads.bam movieX.ccs.bam --noPolish --minPasses 1 &>ccs.log`
-However,We suggest the following command
+</br>However,We now suggest the following command:</br>
 `ccs movieX.subreads.bam movieX.ccs.bam --richQVs &>ccs.log`
-
+</br>The output file is movieX.ccs.bam
 ### Step 2. Demultiplex and trim adapters
-
+</br>Convert movieX.ccs.bam to fasta
+`bam2fasta -u -o ccs movieX.ccs.bam`
+</br>The output file is movieX.ccs.fasta
+</br>
+</br>Extract data and trim adapters
+``
 ### Step 3. Calculate poly(A) tail length and call non-A residues
