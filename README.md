@@ -33,7 +33,7 @@ Reference: https://github.com/PacificBiosciences/IsoSeq3/blob/master/README_v3.2
 ```
 bam2fasta -u -o ccs movieX.ccs.bam
 ```
-The output file is movieX.ccs.fasta
+The output file is movieX.ccs.fasta</br>
 </br>Extract data and trim adapters:</br>
 ```
 ./scripts/trim.py movieX.ccs.fasta sample GAGTGCTACTCTAGTAGTACTCTGCGTTGATACCACTGCTT 22 2 1>sample.out.fasta 2>sample.err.fasta
