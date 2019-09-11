@@ -16,23 +16,37 @@ Library structure: 5'-Adapter--->cDNA--->Barcode->Adapter-3'</br>
 3'-Adapter Sequence: 5'-GTACTCTGCGTTGATACCACTGCTT-3' (25 nt)</br>
 Barcode Sequence: 5'-GAGTGCTACTCTAGTA-3' (16 nt)</br>
 ### Step 2. Circular Consensus Sequence calling
-`ccs movieX.subreads.bam movieX.ccs.bam --noPolish --minPasses 1 &>ccs.log`
-</br>However,We now suggest the following command:</br>
-`ccs movieX.subreads.bam movieX.ccs.bam --richQVs &>ccs.log`
+```
+ccs movieX.subreads.bam movieX.ccs.bam --noPolish --minPasses 1 &>ccs.log
+```
+</br>
+However,We now suggest the following command:</br>
+```
+ccs movieX.subreads.bam movieX.ccs.bam --richQVs &>ccs.log
+```
 </br>The output file is movieX.ccs.bam
 ### Step 3. Demultiplex and trim adapters
 </br>Convert movieX.ccs.bam to fasta:</br>
-`
+```
 bam2fasta -u -o ccs movieX.ccs.bam
-`
+```
 </br>The output file is movieX.ccs.fasta
 </br>
 </br>Extract data and trim adapters:</br>
-`./scripts/trim.py movieX.ccs.fasta sample 22 2 1>sample.out.fasta 2>sample.err.fasta`</br>
+```
+./scripts/trim.py movieX.ccs.fasta sample 22 2 1>sample.out.fasta 2>sample.err.fasta
+```
+</br>
 ### Step 4. Calculate poly(A) tail length and call non-A residues
 </br>Create minimap2 index :</br>
-`minimap2 -x splice -t 20 -d Mus_musculus.mmi Mus_musculus.GRCm38.dna.toplevel.chromosome.fa &>index.log`
+```
+minimap2 -x splice -t 20 -d Mus_musculus.mmi Mus_musculus.GRCm38.dna.toplevel.chromosome.fa &>index.log
+```
 </br>Collect CCS passes :</br>
-`./scripts/GetCCSpass.pl movieX.ccs.bam >ccs.pass.txt`
+```
+./scripts/GetCCSpass.pl movieX.ccs.bam >ccs.pass.txt
+```
 </br>Run the pipeline:</br>
-`perl run.pl --ccs sample.out.fasta --sample sampleName --species mm10 --minimap2_index Mus_musculus.mmi --minimap2_thread  10 --pass ccs.pass.txt &>run.log`
+```
+perl run.pl --ccs sample.out.fasta --sample sampleName --species mm10 --minimap2_index Mus_musculus.mmi --minimap2_thread  10 --pass ccs.pass.txt &>run.log
+```
