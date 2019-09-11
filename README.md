@@ -25,7 +25,9 @@ However,We now suggest the following command:</br>
 ```
 ccs movieX.subreads.bam movieX.ccs.bam --richQVs &>ccs.log
 ```
-The output file is movieX.ccs.bam
+The output file is movieX.ccs.bam</br>
+Reference: https://github.com/PacificBiosciences/IsoSeq3/blob/master/README_v3.2.md
+
 ### Step 3. Demultiplex and trim adapters
 </br>Convert movieX.ccs.bam to fasta:</br>
 ```
