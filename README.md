@@ -22,7 +22,9 @@ Barcode Sequence: 5'-GAGTGCTACTCTAGTA-3' (16 nt)</br>
 </br>The output file is movieX.ccs.bam
 ### Step 3. Demultiplex and trim adapters
 </br>Convert movieX.ccs.bam to fasta:</br>
-`</br>bam2fasta -u -o ccs movieX.ccs.bam</br>`
+`
+bam2fasta -u -o ccs movieX.ccs.bam
+`
 </br>The output file is movieX.ccs.fasta
 </br>
 </br>Extract data and trim adapters:</br>
