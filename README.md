@@ -21,11 +21,11 @@ Barcode Sequence: 5'-GAGTGCTACTCTAGTA-3' (16 nt)</br>
 `ccs movieX.subreads.bam movieX.ccs.bam --richQVs &>ccs.log`
 </br>The output file is movieX.ccs.bam
 ### Step 3. Demultiplex and trim adapters
-</br>Convert movieX.ccs.bam to fasta</br>
-`bam2fasta -u -o ccs movieX.ccs.bam`
+</br>Convert movieX.ccs.bam to fasta:</br>
+`</br>bam2fasta -u -o ccs movieX.ccs.bam</br>`
 </br>The output file is movieX.ccs.fasta
 </br>
-</br>Extract data and trim adapters
+</br>Extract data and trim adapters:</br>
 `./scripts/trim.py movieX.ccs.fasta sample 22 2 1>sample.out.fasta 2>sample.err.fasta`</br>
 ### Step 4. Calculate poly(A) tail length and call non-A residues
 </br>Create minimap2 index :</br>
