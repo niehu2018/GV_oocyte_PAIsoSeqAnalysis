@@ -1,4 +1,4 @@
-Header line in GV.polyA_tail_length.txt.gz
+Header line in GV_all.polyA_tail_length.txt.gz
 
 1. sample: Sample Name
 2. id: CCS read id
@@ -13,5 +13,9 @@ Header line in GV.polyA_tail_length.txt.gz
 11. polyA_seq: Identified poly(A) tail (from 3' to 5')
 12. ccs_seq: CCS read (from 3' to 5')
 
+File: GV_all.polyA_tail_length.txt.gz (All ccs reads in three replicates)
+File: SCGV.polyA_tail_length.txt.gz (SCGV com.)
+File: 
+File: 
 File: GV.polyA_summary.csv
 Identified APA sites in GV oocytes
