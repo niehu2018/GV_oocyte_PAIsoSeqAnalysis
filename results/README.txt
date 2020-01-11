@@ -14,8 +14,9 @@ Header line in GV_all.polyA_tail_length.txt.gz
 12. ccs_seq: CCS read (from 3' to 5')
 
 File: GV_all.polyA_tail_length.txt.gz (All ccs reads in three replicates)
-File: SCGV.polyA_tail_length.txt.gz (SCGV com.)
-File: 
-File: 
+File: GV rep.1.polyA_tail_length.txt.gz
+File: GV rep.2.polyA_tail_length.txt.gz
+File: SCGV com.polyA_tail_length.txt.gz
+
 File: GV.polyA_summary.csv
 Identified APA sites in GV oocytes
