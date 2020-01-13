@@ -12,9 +12,9 @@ minimap2 2.15-r905
 ## Analysis of PAIso-Seq data
 ### Step 1. Known the library structure of PAIso-Seq data</br>
 Library structure: </br>
-&nbsp;&nbsp;&nbsp;&nbsp;Forward style: 5'-Adapter-ATGGG--->cDNA--->AAAAA...AAAAA->Barcode->Adapter-3'</br>
-&nbsp;&nbsp;&nbsp;&nbsp;Reverse style: 5'-Adapter-Barcode->TTTTT...TTTTT->cDNA->CCCAT-Adapter-3'</br>
-5'-Adapter Sequence: 5'-AAGCAGTGGTATCAACGCAGAGTACATGGG-3' (30 nt)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;Forward style: 5'-TSO--->cDNA--->AAAAA...AAAAA->Barcode->Adapter-3'</br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reverse style: 5'-Adapter-Barcode->TTTTT...TTTTT->cDNA->TSO-3'</br>
+5'-TSO Sequence: 5'-AAGCAGTGGTATCAACGCAGAGTACATGGG-3' (30 nt)</br>
 3'-Adapter Sequence: 5'-GTACTCTGCGTTGATACCACTGCTT-3' (25 nt)</br>
 Barcode Sequence: 5'-GAGTGCTACTCTAGTA-3' (16 nt)</br>
 ### Step 2. Circular Consensus Sequence calling
