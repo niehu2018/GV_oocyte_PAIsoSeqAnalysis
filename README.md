@@ -21,7 +21,7 @@ Barcode Sequence: 5'-GAGTGCTACTCTAGTA-3' (16 nt)</br>
 ```
 ccs movieX.subreads.bam movieX.ccs.bam --noPolish --minPasses 1 &>ccs.log
 ```
-However,We now suggest the following command:</br>
+However, We now suggest the following command:</br>
 ```
 ccs movieX.subreads.bam movieX.ccs.bam --richQVs &>ccs.log
 ```
